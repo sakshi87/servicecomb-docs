@@ -1,3 +1,6 @@
+arch: 
+  - arm64
+  - amd64
 install:
   - npm install gitbook-cli -g
   - sudo pip install mkdocs
