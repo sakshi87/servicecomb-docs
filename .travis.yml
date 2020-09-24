@@ -2,7 +2,6 @@ install:
   - npm install gitbook-cli -g
   - sudo pip install mkdocs
   - chmod +x scripts/travis.sh
-  - git config --global --unset https.proxy
 script: 
   - scripts/travis.sh script
 after_success: 
