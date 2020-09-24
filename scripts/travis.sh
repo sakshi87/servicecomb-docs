@@ -30,6 +30,7 @@ if [ "$1" == "script" ]; then
   cd $CUR_DIR/java-chassis-reference/en_US
   mkdocs build -d ../../docs/java-chassis/en_US
   cd $CUR_DIR
+  git config --global --unset https.proxy
 
   git clone --depth=10 --branch=master https://$PUSH_TARGET_URL servicecomb-java-chassis-doc
   if [ "$TRAVIS_BRANCH" == "master" ]; then
