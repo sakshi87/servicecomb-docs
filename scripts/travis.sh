@@ -17,6 +17,9 @@
 ## ---------------------------------------------------------------------------
 #bin/sh
 CUR_DIR=$PWD
+git config --global --unset https.proxy
+git config --global user.name "sakshi87"
+git config --global user.email "sakshi.sharma@puresoftware.com"
 echo "start building servicecomb-docs."
 echo "env TRAVIS_BRANCH=$TRAVIS_BRANCH"
 echo "env PARAM1=$1"
@@ -30,7 +33,6 @@ if [ "$1" == "script" ]; then
   cd $CUR_DIR/java-chassis-reference/en_US
   mkdocs build -d ../../docs/java-chassis/en_US
   cd $CUR_DIR
-  git config --global --unset https.proxy
 
   git clone --depth=10 --branch=master https://$PUSH_TARGET_URL servicecomb-java-chassis-doc
   if [ "$TRAVIS_BRANCH" == "master" ]; then
